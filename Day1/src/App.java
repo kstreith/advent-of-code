@@ -24,14 +24,16 @@ public class App {
                     }
                 }
             }
-            first_num_index = first_num_index * 10;
-            int line_num = first_num_index + last_num_index;
-            System.out.printf("%c%c%n", input.charAt(first_num_index), input.charAt(last_num_index));
+            int first_num = Integer.parseInt(input.substring(first_num_index, first_num_index+1));
+            int last_num = Integer.parseInt(input.substring(last_num_index, last_num_index+1));
+
+            int line_num = (first_num*10) + last_num;
             return line_num;
     }
     public static void main(String[] args) throws Exception {
         String input = "ab3093az";
         int valForLine = calculateNumForLine(input);
+        System.out.println(valForLine);
     }
 }
 

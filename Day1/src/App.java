@@ -1,7 +1,4 @@
-import java.util.Scanner;
 public class App {
-    Scanner scanner = new Scanner(System.in);
-    String input = scanner.nextLine();
     public static int calculateNumForLine(String input) {
             int first_num_index = -1;
             int last_num_index = -1;
@@ -27,13 +24,14 @@ public class App {
                     }
                 }
             }
-    
+            first_num_index = first_num_index * 10;
+            int line_num = first_num_index + last_num_index;
             System.out.printf("%c%c%n", input.charAt(first_num_index), input.charAt(last_num_index));
+            return line_num;
     }
     public static void main(String[] args) throws Exception {
-        String lineText = "ab3093az";
-        int valForLine = calculateNumForLine(lineText);
-        System.out.println("Val for " + lineText + " is " + String.valueOf(valForLine));
+        String input = "ab3093az";
+        int valForLine = calculateNumForLine(input);
     }
 }
 

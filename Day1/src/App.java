@@ -1,8 +1,10 @@
 public class App {
-    public static int dostuff(int x) {
-        return x * x;
+    public static int calculateNumForLine(String lineText) {
+        return 45;
     }
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        String lineText = "ab3093az";
+        int valForLine = calculateNumForLine(lineText);
+        System.out.println("Val for " + lineText + " is " + String.valueOf(valForLine));
     }
 }

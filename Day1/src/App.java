@@ -37,4 +37,3 @@ public class App {
     }
 }
 
-git config --global user.email "you"

@@ -1,3 +1,9 @@
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
 public class App {
     public static int calculateNumForLine(String input) {
             int first_num_index = -1;
@@ -32,8 +38,14 @@ public class App {
     }
     public static void main(String[] args) throws Exception {
         String input = "ab3093az";
-        int valForLine = calculateNumForLine(input);
-        System.out.println(valForLine);
+        Path dataPath = Paths.get("Data.txt");
+        List<String> lines = Files.readAllLines(dataPath, StandardCharsets.UTF_8);
+        int sum = 0;
+        for (String line: lines) {
+            int valForLine = calculateNumForLine(line);
+            sum += valForLine;
+        }
+        System.out.println("Sum is " + sum);
     }
 }
 

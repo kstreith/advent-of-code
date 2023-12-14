@@ -37,7 +37,6 @@ public class App {
             return line_num;
     }
     public static void main(String[] args) throws Exception {
-        String input = "ab3093az";
         Path dataPath = Paths.get("Data.txt");
         List<String> lines = Files.readAllLines(dataPath, StandardCharsets.UTF_8);
         int sum = 0;

@@ -16,7 +16,7 @@ public class AppTest {
 
         Assert.assertEquals(38, value);
     }
-
+ 
     @Test
     public void test_Three() {
         int value = App.calculateNumForLine("a1b2c3d4e5f");

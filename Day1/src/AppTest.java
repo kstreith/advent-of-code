@@ -4,24 +4,31 @@ import org.junit.Assert;
 
 public class AppTest {
     @Test
-    public void test_OnlyHasOneNum_AtEnd() {
-        int value = App.calculateNumForLine("abcd3");
+    public void test_One() {
+        int value = App.calculateNumForLine("1abc2");
 
-        Assert.assertEquals(3, value);
+        Assert.assertEquals(12, value);
     }
 
     @Test
-    public void test_OnlyHasOneNum_AtBegin() {
-        int value = App.calculateNumForLine("3abcd");
+    public void test_Two() {
+        int value = App.calculateNumForLine("pqr3stu8vwx");
 
-        Assert.assertEquals(3, value);
+        Assert.assertEquals(38, value);
     }
 
     @Test
-    public void test_Two_Nums_Together() {
-        int value = App.calculateNumForLine("ab45cd");
+    public void test_Three() {
+        int value = App.calculateNumForLine("a1b2c3d4e5f");
 
-        Assert.assertEquals(45, value);
+        Assert.assertEquals(15, value);
+    }
+
+    @Test
+    public void test_Four() {
+        int value = App.calculateNumForLine("treb7uchet");
+
+        Assert.assertEquals(77, value);
     }
 
 }

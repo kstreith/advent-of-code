@@ -50,7 +50,6 @@ public class App {
     }
     public static void runOverDataFile() throws IOException
     {
-        /*
         Path dataPath = Paths.get("Data.txt");
         List<String> lines = Files.readAllLines(dataPath, StandardCharsets.UTF_8);
         int sum = 0;
@@ -58,14 +57,13 @@ public class App {
             int valForLine = calculateWinningNumbersForCard(line);
         }
         System.out.println("Sum is " + sum);
-        */
     }
     public static void quickTest() {
         String card = "Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1";
         int countOfMatchedWinners = calculateWinningNumbersForCard(card);
         System.out.println("Count of watched winners " + countOfMatchedWinners + " for card " + card);
-        //int score = calculateScoreBasedUponWinningNumbers(winningNumbers);
-        //System.out.println("Score for above card is " + score);
+        int score = calculateScoreBasedUponWinningNumbers(countOfMatchedWinners);
+        System.out.println("Score for above card is " + score);
     }
     public static void main(String[] args) throws Exception {
         quickTest();

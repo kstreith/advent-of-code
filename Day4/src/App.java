@@ -9,7 +9,7 @@ import java.util.List;
 public class App {
     public static int calculateWinningNumbersForCard(String input) {
             String[] winningNumbers = input.substring(input.indexOf(":")+1, input.indexOf("|")).split(" ");//"Card   1: 66 90 67 76 55 13 91 31 95  4 | 82 98 69  8 15  2 32 24 99 56 46 65 60 72 58 68 54 22 26  5 74 25 84 73 61".split(" ");
-            System.out.println("1");
+            //System.out.println("1");
             /*int[] winningNumbers = {0, 1, 2, 3, 4};
             winningNumbers[0] = Integer.parseInt(input.substring(8, 10).trim());
             winningNumbers[1] = Integer.parseInt(input.substring(11,13).trim());
@@ -52,11 +52,13 @@ public class App {
     {
         Path dataPath = Paths.get("Data.txt");
         List<String> lines = Files.readAllLines(dataPath, StandardCharsets.UTF_8);
-        int sum = 0;
+        int totalScore = 0;
         for (String line: lines) {
-            int valForLine = calculateWinningNumbersForCard(line);
+            int countOfWinningNumbersForLine = calculateWinningNumbersForCard(line);
+            int scoreForLine = calculateScoreBasedUponWinningNumbers(countOfWinningNumbersForLine);
+            totalScore += scoreForLine;
         }
-        System.out.println("Sum is " + sum);
+        System.out.println("Total Score is " + totalScore);
     }
     public static void quickTest() {
         String card = "Card 3:  1 21 53 59 44 | 69 82 63 72 16 21 14  1";
@@ -66,8 +68,8 @@ public class App {
         System.out.println("Score for above card is " + score);
     }
     public static void main(String[] args) throws Exception {
-        quickTest();
-        //runOverDataFile();
+        //quickTest();
+        runOverDataFile();
     }
 }
 

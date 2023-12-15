@@ -8,18 +8,40 @@ import java.util.List;
 
 public class App {
     public static int calculateWinningNumbersForCard(String input) {
-            System.out.println(input.substring(8, 10));
-            System.out.println(input.substring(11,13));
-            System.out.println(input.substring(14,16));
-            System.out.println(input.substring(17, 19));
-            System.out.println(input.substring(20,22));
-            //int[] winningNumbers = {Integer.parseInt(), Integer.parseInt(), Integer.parseInt(), Integer.parseInt(), Integer.parseInt()};
-            //System.out.println(winningNumbers[1]);
+            String[] stuff = "Card   1: 66 90 67 76 55 13 91 31 95  4 | 82 98 69  8 15  2 32 24 99 56 46 65 60 72 58 68 54 22 26  5 74 25 84 73 61".split(" ");
+            int[] winningNumbers = {0, 1, 2, 3, 4};
+            winningNumbers[0] = Integer.parseInt(input.substring(8, 10).trim());
+            winningNumbers[1] = Integer.parseInt(input.substring(11,13).trim());
+            winningNumbers[2] = Integer.parseInt(input.substring(14,16).trim());
+            winningNumbers[3] = Integer.parseInt(input.substring(17, 19).trim());
+            winningNumbers[4] = Integer.parseInt(input.substring(20,22).trim());
+
+            int[] cardNumbers = {0, 1, 2, 3, 4, 5, 6, 7};
+            cardNumbers[0] = Integer.parseInt(input.substring(25, 27).trim());
+            cardNumbers[1] = Integer.parseInt(input.substring(28,30).trim());
+            cardNumbers[2] = Integer.parseInt(input.substring(31,33).trim());
+            cardNumbers[3] = Integer.parseInt(input.substring(34, 36).trim());
+            cardNumbers[4] = Integer.parseInt(input.substring(37,39).trim());
+            cardNumbers[5] = Integer.parseInt(input.substring(40,42).trim());
+            cardNumbers[6] = Integer.parseInt(input.substring(43,45).trim());
+            cardNumbers[7] = Integer.parseInt(input.substring(46,48).trim());
+
+            int y = 0;
             int countOfMatchingWinners = 0;
+            for (int x = 0; x < 5; x++){
+                while(y < 8){
+                    if(winningNumbers[x] == cardNumbers[y]){
+                        countOfMatchingWinners++;
+                    }
+                    y++;
+                }
+                y = 0;
+            }
+            System.out.println(countOfMatchingWinners);
             return countOfMatchingWinners;
     }
     public static int calculateScoreBasedUponWinningNumbers(int winningNumbers) {
-            int score = 0;
+        int score = (int) Math.pow(2, (winningNumbers-1));
             return score;
     }
     public static void runOverDataFile() throws IOException

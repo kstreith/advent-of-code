@@ -67,7 +67,7 @@ public class AppTest {
     }
 
     @Test
-    public void test_ScoreFor3WinningCards() {
+    public void test_ScoreFor4WinningCards() {
         int value = App.calculateScoreBasedUponWinningNumbers(4);
 
         Assert.assertEquals(8, value);

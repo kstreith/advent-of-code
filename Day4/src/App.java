@@ -9,7 +9,7 @@ import java.util.List;
 public class App {
     public static int calculateWinningNumbersForCard(String input) {
             String[] winningNumbers = input.substring(11, input.indexOf("|")).split(" ");//"Card   1: 66 90 67 76 55 13 91 31 95  4 | 82 98 69  8 15  2 32 24 99 56 46 65 60 72 58 68 54 22 26  5 74 25 84 73 61".split(" ");
-            
+            System.out.println("1");
             /*int[] winningNumbers = {0, 1, 2, 3, 4};
             winningNumbers[0] = Integer.parseInt(input.substring(8, 10).trim());
             winningNumbers[1] = Integer.parseInt(input.substring(11,13).trim());
@@ -17,8 +17,8 @@ public class App {
             winningNumbers[3] = Integer.parseInt(input.substring(17, 19).trim());
             winningNumbers[4] = Integer.parseInt(input.substring(20,22).trim());*/
 
-            String[] cardNumbers = input.substring(input.indexOf("|")).split(" ");
-
+            String[] cardNumbers = input.substring(input.indexOf("|")+2).split(" ");
+            
             /*cardNumbers[0] = Integer.parseInt(input.substring(25, 27).trim());
             cardNumbers[1] = Integer.parseInt(input.substring(28,30).trim());
             cardNumbers[2] = Integer.parseInt(input.substring(31,33).trim());
@@ -27,19 +27,18 @@ public class App {
             cardNumbers[5] = Integer.parseInt(input.substring(40,42).trim());
             cardNumbers[6] = Integer.parseInt(input.substring(43,45).trim());
             cardNumbers[7] = Integer.parseInt(input.substring(46,48).trim());*/
-            /* 
+            
             int y = 0;
             int countOfMatchingWinners = 0;
-            for (int x = 0; x < 5; x++){
-                while(y < 8){
-                    if(winningNumbers[x] == cardNumbers[y]){
+            for (int x = 0; x < (winningNumbers.length); x++){
+                while(y < (cardNumbers.length)){
+                    if(winningNumbers[x].trim().equals(cardNumbers[y].trim())){
                         countOfMatchingWinners++;
                     }
                     y++;
                 }
                 y = 0;
-            }*/
-            int countOfMatchingWinners = 0;
+            }
             return countOfMatchingWinners;
     }
     public static int calculateScoreBasedUponWinningNumbers(int winningNumbers) {

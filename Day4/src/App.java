@@ -31,12 +31,12 @@ public class App {
             int y = 0;
             int countOfMatchingWinners = 0;
             for (int x = 0; x < (winningNumbers.length); x++){
+                if (winningNumbers[x].trim().equals("")) {
+                    continue;
+                }
                 while(y < (cardNumbers.length)){
-                    if(winningNumbers[x].trim().equals(cardNumbers[y].trim())){
-                        if(winningNumbers[x].equals("")){
-                        }else{
-                            countOfMatchingWinners++;
-                        }
+                    if (winningNumbers[x].trim().equals(cardNumbers[y].trim())){
+                        countOfMatchingWinners++;
                     }
                     y++;
                 }

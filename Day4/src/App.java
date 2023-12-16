@@ -48,6 +48,15 @@ public class App {
         int score = (int) Math.pow(2, (winningNumbers-1));
             return score;
     }
+    public static int calculateTotalCards(String[] cards)
+    {
+        int totalNumOfExtraCards = 0;
+        int[] extraCardsCount = new int[cards.length];
+        for (int index = 0; index < cards.length; ++index) {
+            int matchesForCurrentCard = calculateWinningNumbersForCard(cards[index]);
+        }
+        return cards.length + totalNumOfExtraCards;
+    }
     public static void runOverDataFile() throws IOException
     {
         Path dataPath = Paths.get("Data.txt");

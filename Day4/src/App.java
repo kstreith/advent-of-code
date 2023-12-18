@@ -55,11 +55,14 @@ public class App {
         for (int index = 0; index < cards.length; ++index) {
             int matchesForCurrentCard = calculateWinningNumbersForCard(cards[index]);
             for(int e = 0; e < matchesForCurrentCard; e++){
-                totalNumOfExtraCards++;
-                extraCardsCount[index+e] += 1;
+                //totalNumOfExtraCards++;
+                int overIndex = (index+e)-cards.length;
+                if (!(overIndex > 1)){
+                    extraCardsCount[index+e] += 1;
+                }
             }
+            return cards.length + totalNumOfExtraCards;
         }
-        return cards.length + totalNumOfExtraCards;
     }
     public static void runOverDataFile() throws IOException
     {

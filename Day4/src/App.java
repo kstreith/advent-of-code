@@ -54,6 +54,10 @@ public class App {
         int[] extraCardsCount = new int[cards.length];
         for (int index = 0; index < cards.length; ++index) {
             int matchesForCurrentCard = calculateWinningNumbersForCard(cards[index]);
+            for(int e = 0; e < matchesForCurrentCard; e++){
+                totalNumOfExtraCards++;
+                extraCardsCount[index+e] += 1;
+            }
         }
         return cards.length + totalNumOfExtraCards;
     }
